@@ -3,6 +3,7 @@ package com.mystudyapps.polynomialcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
         simplifyTV = findViewById(R.id.simplifyTV);
         outputTV = findViewById(R.id.outputTV);
         sumBTN = (Button) findViewById(R.id.sumBtn);
+
+        pEquation.setGravity(Gravity.CENTER_HORIZONTAL);
+        qEquation.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
 
