@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText qEquation;
     TextView simplifyTV, outputTV, differenceTV;
     Button sumBTN;
+    Animation scaleUp, scaleDown;
     public AbstractPolynomial p,q;
 
     private void setPolyomials(AbstractPolynomial p, AbstractPolynomial q){
@@ -36,11 +40,6 @@ public class MainActivity extends AppCompatActivity {
         simplifyTV.setText("Polynomials Simplified\np = " + p + "\nq = " + q);
     }
     public void sumButtonOnClick(View view){
-
-        updateOutput();
-        simplifyPolynomials(p,q);
-        outputTV.setText("Sum " + p.add(q));
-
 
     }
 
@@ -71,9 +70,26 @@ public class MainActivity extends AppCompatActivity {
         qEquation.setGravity(Gravity.CENTER);
 
         ActionBar actionBar = getSupportActionBar();
-        Drawable image=(Drawable)getResources().getDrawable(R.drawable.box);
         actionBar.hide();
-        actionBar.setBackgroundDrawable(image);
+
+        scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
+
+        sumBTN.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    sumBTN.startAnimation(scaleUp);
+                    updateOutput();
+                    simplifyPolynomials(p,q);
+                    outputTV.setText("Sum " + p.add(q));
+                }else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    sumBTN.startAnimation(scaleDown);
+                }
+                return true;
+            }
+        });
+
 
 
 
