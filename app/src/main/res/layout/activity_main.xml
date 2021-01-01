@@ -27,7 +27,7 @@
         android:id="@+id/polynomialQ"
         android:layout_width="237dp"
         android:layout_height="44dp"
-        android:background="@drawable/box"
+        android:background="@drawable/buttondesign"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="x^3+3"
@@ -60,49 +60,57 @@
         app:layout_constraintTop_toBottomOf="@+id/simplifyTV"
         app:layout_constraintVertical_bias="0.294" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sumBtn"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/buttondesign"
         android:onClick="sumButtonOnClick"
         android:rotation="0"
         android:rotationX="0"
         android:rotationY="0"
         android:text="Calculate Sum"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#4CAF50"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/polynomialQ" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/differenceBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:background="@drawable/buttondesign"
         android:onClick="differenceButtonOnClick"
         android:rotation="0"
         android:rotationX="0"
         android:rotationY="0"
         android:text="Calculate Diffenence"
+        android:textColor="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintTop_toBottomOf="@+id/sumBtn"
+        app:layout_constraintVertical_bias="0.04" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/productBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:background="@drawable/buttondesign"
         android:onClick="productButtonOnClick"
         android:rotation="0"
         android:rotationX="0"
         android:rotationY="0"
         android:text="Calculate Product"
+        android:textColor="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/differenceBtn"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.079" />
 </androidx.constraintlayout.widget.ConstraintLayout>
