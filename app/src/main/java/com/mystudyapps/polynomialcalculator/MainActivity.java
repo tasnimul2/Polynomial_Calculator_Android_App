@@ -3,6 +3,7 @@ package com.mystudyapps.polynomialcalculator;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText pEquation ;
     EditText qEquation;
     TextView simplifyTV, outputTV, differenceTV;
-    Button sumBTN;
+    Button sumBTN, differenceBtn,productBtn;
     Animation scaleUp, scaleDown;
     public AbstractPolynomial p,q;
 
@@ -39,21 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void simplifyPolynomials(AbstractPolynomial p, AbstractPolynomial q){
         simplifyTV.setText("Polynomials Simplified\np = " + p + "\nq = " + q);
     }
-    public void sumButtonOnClick(View view){
 
-    }
-
-    public void differenceButtonOnClick(View view){
-        updateOutput();
-        simplifyPolynomials(p,q);
-        outputTV.setText("Difference " + p.subtract(q));
-    }
-
-    public void productButtonOnClick(View view){
-        updateOutput();
-        simplifyPolynomials(p,q);
-        outputTV.setText("Product " + p.multiply(q));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         simplifyTV = findViewById(R.id.simplifyTV);
         outputTV = findViewById(R.id.outputTV);
         sumBTN = (Button) findViewById(R.id.sumBtn);
+        differenceBtn = (Button) findViewById(R.id.differenceBtn);
+        productBtn = (Button) findViewById(R.id.productBtn);
+
 
         pEquation.setGravity(Gravity.CENTER);
         qEquation.setGravity(Gravity.CENTER);
@@ -72,27 +62,55 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
-        scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
+        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
         sumBTN.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     sumBTN.startAnimation(scaleUp);
                     updateOutput();
-                    simplifyPolynomials(p,q);
+                    simplifyPolynomials(p, q);
                     outputTV.setText("Sum " + p.add(q));
-                }else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     sumBTN.startAnimation(scaleDown);
+                }
+                return true;
+            }
+
+        });
+
+        differenceBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    differenceBtn.startAnimation(scaleUp);
+                    updateOutput();
+                    simplifyPolynomials(p,q);
+                    outputTV.setText("Difference " + p.subtract(q));
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    differenceBtn.startAnimation(scaleDown);
                 }
                 return true;
             }
         });
 
-
-
-
+        productBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    productBtn.startAnimation(scaleUp);
+                    updateOutput();
+                    simplifyPolynomials(p,q);
+                    outputTV.setText("Product " + p.multiply(q));
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    productBtn.startAnimation(scaleDown);
+                }
+                return true;
+            }
+        });
 
 
 
