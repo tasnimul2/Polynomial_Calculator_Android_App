@@ -65,8 +65,9 @@ public class MainActivity extends AppCompatActivity {
         outputTV = findViewById(R.id.outputTV);
         sumBTN = (Button) findViewById(R.id.sumBtn);
 
-        pEquation.setGravity(Gravity.CENTER_HORIZONTAL);
-        qEquation.setGravity(Gravity.CENTER_HORIZONTAL);
+        pEquation.setGravity(Gravity.CENTER);
+        qEquation.setGravity(Gravity.CENTER);
+
 
 
 
