@@ -11,8 +11,8 @@
 
     <EditText
         android:id="@+id/polynomialP"
-        android:layout_width="237dp"
-        android:layout_height="44dp"
+        android:layout_width="314dp"
+        android:layout_height="52dp"
         android:background="@drawable/textbackground"
         android:ems="10"
         android:inputType="textPersonName"
@@ -26,7 +26,7 @@
 
     <EditText
         android:id="@+id/polynomialQ"
-        android:layout_width="237dp"
+        android:layout_width="314dp"
         android:layout_height="44dp"
         android:background="@drawable/textbackground"
         android:ems="10"

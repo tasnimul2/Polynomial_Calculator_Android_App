@@ -1,7 +1,9 @@
 package com.mystudyapps.polynomialcalculator;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -68,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
         pEquation.setGravity(Gravity.CENTER);
         qEquation.setGravity(Gravity.CENTER);
 
-        getSupportActionBar().hide();
+        ActionBar actionBar = getSupportActionBar();
+        Drawable image=(Drawable)getResources().getDrawable(R.drawable.box);
+        actionBar.hide();
+        actionBar.setBackgroundDrawable(image);
 
 
 
