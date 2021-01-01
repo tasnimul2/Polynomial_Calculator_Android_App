@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         pEquation.setGravity(Gravity.CENTER);
         qEquation.setGravity(Gravity.CENTER);
 
+        getSupportActionBar().hide();
+
 
 
 
