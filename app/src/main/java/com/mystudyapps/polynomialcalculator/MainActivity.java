@@ -32,7 +32,18 @@ public class MainActivity extends AppCompatActivity {
     //what ever is in the text view, this method will take it and set it at the p and q polynomial equation in the algorithm.
     private void updateOutput(){
         try {
-            setPolyomials(new Polynomial(pEquation.getText().toString()) ,new Polynomial(qEquation.getText().toString()) );
+            if(!pEquation.getText().toString().isEmpty() && !qEquation.getText().toString().isEmpty()) {
+                setPolyomials(new Polynomial(pEquation.getText().toString()), new Polynomial(qEquation.getText().toString()));
+            }else if(pEquation.getText().toString().isEmpty() && !qEquation.getText().toString().isEmpty()){
+                setPolyomials(new Polynomial("x^2+2"),new Polynomial("x^3+3"));
+                Toast.makeText(MainActivity.this, "Can't leave one input empty", Toast.LENGTH_SHORT).show();
+            }else if(!pEquation.getText().toString().isEmpty() && qEquation.getText().toString().isEmpty()){
+                setPolyomials(new Polynomial("x^2+2"),new Polynomial("x^3+3"));
+                Toast.makeText(MainActivity.this, "Can't leave one input empty", Toast.LENGTH_SHORT).show();
+            }else{
+                setPolyomials(new Polynomial("x^2+2"),new Polynomial("x^3+3"));
+                Toast.makeText(MainActivity.this, "Must input an equation first", Toast.LENGTH_SHORT).show();
+            }
         }catch (Exception e){
             Toast.makeText(MainActivity.this, "Unknown Error", Toast.LENGTH_SHORT).show();
         }
