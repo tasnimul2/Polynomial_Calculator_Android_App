@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         pEquation.setGravity(Gravity.CENTER);
         qEquation.setGravity(Gravity.CENTER);
+        outputTV.setGravity(Gravity.CENTER);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -66,14 +67,13 @@ public class MainActivity extends AppCompatActivity {
         scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
         sumBTN.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     sumBTN.startAnimation(scaleUp);
                     updateOutput();
                     simplifyPolynomials(p, q);
-                    outputTV.setText("Sum " + p.add(q));
+                    outputTV.setText("Sum: " + p.add(q));
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     sumBTN.startAnimation(scaleDown);
                 }
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     differenceBtn.startAnimation(scaleUp);
                     updateOutput();
                     simplifyPolynomials(p,q);
-                    outputTV.setText("Difference " + p.subtract(q));
+                    outputTV.setText("Difference: " + p.subtract(q));
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     differenceBtn.startAnimation(scaleDown);
                 }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     productBtn.startAnimation(scaleUp);
                     updateOutput();
                     simplifyPolynomials(p,q);
-                    outputTV.setText("Product " + p.multiply(q));
+                    outputTV.setText("Product: " + p.multiply(q));
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     productBtn.startAnimation(scaleDown);
                 }

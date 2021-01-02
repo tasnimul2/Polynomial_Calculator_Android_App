@@ -49,6 +49,8 @@
         android:text="Simplified"
         android:textColor="#FFFFFF"
         android:textStyle="bold|italic"
+        android:background="@drawable/textbackground"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -63,6 +65,8 @@
         android:text="sum"
         android:textColor="#FFFFFF"
         android:textStyle="bold|italic"
+        android:background="@drawable/textbackground"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/polynomialQ"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/differenceBtn"
@@ -124,4 +128,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/differenceBtn"
         app:layout_constraintVertical_bias="0.079" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
