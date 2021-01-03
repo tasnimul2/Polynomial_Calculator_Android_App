@@ -1,3 +1,12 @@
+# :fire: Polynomial Calculator Android App :fire:
+
+
+### [DOWNLOAD APP (Android Only)](https://www.mediafire.com/file/ibd0ujep0e7i4t0/app-release.apk/file)
+
+
+### Game sample :
+![](https://i.imgur.com/AWnETJD.gif)
+![](https://i.imgur.com/AMshJ2V.gif)
 # DOCUMENTATION: 
 ![](https://i.imgur.com/Bpc2uRc.png)
 ![](https://i.imgur.com/dCAnm6W.png)
